@@ -1,0 +1,30 @@
+{
+	"name": "assign-styles",
+	"version": "1.0.0",
+	"description": "Object.assign polyfill respecting !important notation.",
+	"main": "src/index.js",
+	"files": [
+		"LICENSE",
+		"README.md",
+		"src/"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rofrischmann/assign-styles"
+	},
+	"keywords": [
+		"object.assign",
+		"assign",
+		"object-assign",
+		"inline styles",
+		"!important",
+		"css in js"
+	],
+	"author": "Robin Frischmann",
+	"license": "MIT",
+	"browserify": {
+		"transform": [
+			"babelify"
+		]
+	}
+}
