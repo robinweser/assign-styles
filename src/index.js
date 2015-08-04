@@ -14,9 +14,7 @@ export default function assignStyles(...styles) {
 	newStyles.forEach(styleObj => {
 		if (styleObj) {
 			for (property in styleObj) {
-				if (base.hasOwnProperty(property) && isImportant(base[property])) {
-					base[property] = base[property];
-				} else {
+				if (!(base.hasOwnProperty(property) && isImportant(base[property]))) {
 					base[property] = styleObj[property];
 				}
 			}

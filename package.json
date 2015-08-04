@@ -1,6 +1,6 @@
 {
 	"name": "assign-styles",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Object.assign polyfill respecting !important notation.",
 	"main": "src/index.js",
 	"files": [
