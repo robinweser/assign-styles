@@ -1,13 +1,18 @@
 {
 	"name": "assign-styles",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Object.assign polyfill respecting !important notation.",
-	"main": "src/index.js",
+	"main": "lib/index.js",
 	"files": [
 		"LICENSE",
 		"README.md",
-		"src/"
+		"lib/"
 	],
+	"scripts": {
+		"pretest" : "babel src --out-dir lib",
+		"test": "mocha --recursive --compilers js:babel/register",
+		"prepublish" : "babel src --out-dir lib"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/rofrischmann/assign-styles"
@@ -22,9 +27,9 @@
 	],
 	"author": "Robin Frischmann",
 	"license": "MIT",
-	"browserify": {
-		"transform": [
-			"babelify"
-		]
+	"devDependencies": {
+		"babel": "^5.8.21",
+		"chai": "^3.2.0",
+		"mocha": "^2.2.5"
 	}
 }

@@ -1,4 +1,7 @@
 # assign-styles
+[![Build Status](https://travis-ci.org/rofrischmann/assign-styles.svg)](https://travis-ci.org/rofrischmann/assign-styles)
+[![Code Climate](https://codeclimate.com/github/rofrischmann/assign-styles/badges/gpa.svg)](https://codeclimate.com/github/rofrischmann/assign-styles)
+[![npm version](https://badge.fury.io/js/assign-styles.svg)](http://badge.fury.io/js/assign-styles)
 ```sh
 npm install assign-styles
 ```

@@ -19,7 +19,7 @@ export default function assignStyles(...styles) {
 				}
 			}
 		}
-	})
+	});
 
 	return base;
 }
