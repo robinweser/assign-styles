@@ -6,28 +6,30 @@
  * Existing values will get overwritten by default
  */
 export default function assignStyles(...styles) {
-	let property;
+  let property
 
-	let newStyles = styles.splice(1);
-	let base = styles[0];
+  let newStyles = styles.splice(1)
+  let base = styles[0];
 
-	newStyles.forEach(styleObj => {
-		if (styleObj) {
-			for (property in styleObj) {
-				if (!(base.hasOwnProperty(property) && isImportant(base[property]))) {
-					base[property] = styleObj[property];
-				}
-			}
-		}
-	});
-
-	return base;
+  newStyles.forEach(styleObj => {
+    if (styleObj instanceof Object) {
+      Object.keys(styleObj).forEach(property => {
+        let value = styleObj[property]
+        if (!(base.hasOwnProperty(property) && isImportant(base[property]))) {
+          if (base[property] instanceof Object && value instanceof Object) {
+            base[property] = assignStyles({}, base[property], value)
+          } else {
+            base[property] = value
+          }
+        }
+      })
+    }
+  })
+  return base
 }
 
 /**
  * Checks if a property value is an css important rule with !important
  * @param {string} property - property thats value gets checked 
  */
-function isImportant(value) {
-	return typeof value == 'string' && value.toLowerCase().indexOf('!important') > -1;
-}
+const isImportant = (value) => typeof value == 'string' && value.toLowerCase().indexOf('!important') > -1
